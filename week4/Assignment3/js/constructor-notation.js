@@ -1,21 +1,31 @@
-// Set up the object
-var painting = new Object();
+//create the template function
+function Painting(name, size, price){
+  this.name= name;
+  this.size= size;
+  this.price= price;
+  this.checkPrice = function (){
+    return this.size * this.price;
+  }
+}
 
-//set up the properties
-painting.name = 'Night Sky';
-painting.size = 30;
-painting.price= 15;
+//create the first object
+var nightskyPainting= new Painting ('Night Sky', 28, 30);
 
-//setting up the price function
-painting.checkPrice = function() {
-  return painting.size * painting.price;   
-};
+//create the second object
+var dayskyPainting= new Painting ('Day Sky', 50, 30);
 
-var elName = document.getElementById('paintingName'); // Get element
-elName.textContent = painting.name;                   // Update HTML with property of the object
 
-var elRooms = document.getElementById('paintingPrice');    // Get element
-elRooms.textContent = painting.checkPrice();   // Update HTML with result of method
+//display first object
+var details1= nightskyPainting.name + ' $';
+  details1 += nightskyPainting.checkPrice() + ' Size: ';
+  details1 += nightskyPainting.size + ' x 24 inches'; 
+var elPainting1 = document.getElementById('Painting1');
+elPainting1.textContent=details1;
 
-var elName = document.getElementById('paintingSize'); // Get element
-elName.textContent = painting.size;                   // Update HTML with property of the object
+
+//display the second object
+var details2= dayskyPainting.name + ' $';
+  details2 += dayskyPainting.checkPrice() + ' Size: ';
+  details2 += dayskyPainting.size + ' x 24 inches';   
+var elPainting2 = document.getElementById('Painting2');
+elPainting2.textContent=details2;
