@@ -21,3 +21,4 @@ function averageScore(){
 }
 //account for the addition of 999 to end the while loop; 
 var average = (sum - 999)/(count - 1); 
+alert("Average score is " + average);
